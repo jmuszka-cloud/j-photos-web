@@ -15,6 +15,8 @@
         //If username and password match
         if ($enteredUsername===$user->username && $enteredPassword===$user->password) {
             //Send to main page
+            session_start();
+            $_SESSION['userInfo'] = $user; //to save user info
             header("Location: ../photos.php");
             exit;
         }
