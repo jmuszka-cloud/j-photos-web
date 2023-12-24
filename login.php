@@ -1,6 +1,11 @@
 <!DOCTYPE html>
+<head>
+    <title>j-photos | Login</title>
+    <meta charset="UTF-8" lang="en">
+</head>
+
 <html>
-    <div>Log in</div>
+    <div>Log in!</div>
     <br>
 
     <div>
