@@ -8,4 +8,7 @@
         return json_decode($data);
     }
 
+    function appendJson($jsonStr, $jsonFilePath) {
+    }
+
 ?>

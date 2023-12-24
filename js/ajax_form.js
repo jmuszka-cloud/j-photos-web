@@ -9,7 +9,9 @@ function uploadToServer(formId) {
         body: formData
     })
         .then((response) => response.text())
-        .then((data) => {})
+        .then((data) => {
+            
+        })
         .catch((error) => {
             console.error("Error:",error);
         });
