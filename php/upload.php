@@ -30,25 +30,25 @@
 
     //Put new photo data into a json string
     $filename = $FNAME;
-    $directory = $TARGET_DIR;
-    //TODO: id
+    $directory = substr($TARGET_DIR, 3);
+    $id = getLastJsonData("../ref/userdirs/$userId/photoData.json")->id + 1;
     $uploadTime = floor(microtime(true) * 1000);
-    //TODO: type
+    $type = strtoupper(explode(".", $filename)[count(explode(".", $filename))-1]);
     $size = $SIZE;
     //TODO: width
     //TODO: height
     //TODO: length
-    $photoInfo = [
+    $photoInfo = ["69" => [
         "filename" => $filename,
         "directory" => $directory,
-        "id" => "null",
+        "id" => $id,
         "uploadTime" => $uploadTime,
-        "type" => "null",
+        "type" => $type,
         "size" => $size,
         "width" => "null",
         "height" => "null",
         "length" => "null"
-    ];
+    ]];
     $photoInfo = json_encode($photoInfo);
 
     //Add new photo to json file

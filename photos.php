@@ -7,6 +7,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="js/ajax_form.js" type="text/javascript"></script>
+    <script src="js/events.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -36,6 +39,12 @@
 
     //Print photo information
     foreach($photos as $photo) {
+        echo "<div ";
+        echo "id=\"$photo->id\" ";
+        echo "class=\"photo\" ";
+        echo "onclick=\"printId(event)\"";
+        echo ">";
+
         echo "$photo->filename<br>";
         echo " --- Filename: $photo->filename<br>";
         echo " --- Directory: $photo->directory<br>";
@@ -46,7 +55,7 @@
         echo " --- Dimensions: ". convertDimensions($photo->width, $photo->height) ."<br>";
         //if ($photo->length >= 0) echo " --- Length: ". convertLength($photo->length) ."<br>"; //TODO: fix formatting
 
-        echo "<br>";
+        echo "</div>";
     }
 
 ?>

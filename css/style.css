@@ -1,0 +1,9 @@
+.photo {
+    background-color: #f9f9fe;
+    padding: 10px;
+    margin: 5;
+}
+
+.photo:hover {
+    background-color: #eeeeee;
+}

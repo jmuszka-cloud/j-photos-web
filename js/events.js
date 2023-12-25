@@ -1,5 +1,9 @@
-function uploadToServer(formId) {
+function printId(e) {
+    const div = e.target;
+    console.log(div.id);
+}
 
+function deletePhoto(e) {
     const formData = new FormData();
     formData.append("file", document.getElementById(formId).files[0]);
     console.log(document.getElementById(formId).files[0]);
