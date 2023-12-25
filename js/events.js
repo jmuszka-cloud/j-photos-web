@@ -5,18 +5,20 @@ function printId(e) {
 
 function deletePhoto(e) {
     const formData = new FormData();
-    formData.append("file", document.getElementById(formId).files[0]);
-    console.log(document.getElementById(formId).files[0]);
+    formData.append("id", e.target.id);
 
-    fetch("php/upload.php", {
+    fetch("php/delete.php", {
         method: "POST",
         body: formData
     })
         .then((response) => response.text())
         .then((data) => {
-            window.location.reload();
+            console.log("PHP: " + data);
+            //TODO: refresh
         })
         .catch((error) => {
             console.error("Error:",error);
         });
+
+    //TODO: disable context menu
 }

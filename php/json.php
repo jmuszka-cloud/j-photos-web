@@ -33,4 +33,10 @@
         fclose($file);
     }
 
+    function writeJson($jsonStr, $jsonFilePath) {
+        $file = fopen($jsonFilePath, "w") or die("Error retrieving database");
+        fwrite($file, $jsonStr);
+        fclose($file);
+    }
+
 ?>

@@ -37,12 +37,18 @@
 <?php
     $photos = getPhotosByUserId($USER_ID);
 
+    //PHOTO CONTAINEr
+    echo "<div ";
+    echo "id=\"photoPanel\" ";
+    echo ">";
+
     //Print photo information
     foreach($photos as $photo) {
         echo "<div ";
         echo "id=\"$photo->id\" ";
         echo "class=\"photo\" ";
         echo "onclick=\"printId(event)\"";
+        echo "oncontextmenu=\"deletePhoto(event);\"";
         echo ">";
 
         echo "$photo->filename<br>";
@@ -58,6 +64,7 @@
         echo "</div>";
     }
 
+    echo "</div>"
 ?>
 
 <!-- Upload -->
