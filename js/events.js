@@ -41,3 +41,23 @@ function closeUploadMenu() {
     hide(screenCover);
     hide(uploadMenu);
 }
+
+function openInfoMenu() {
+    let screenCover = document.getElementById("screen-cover");
+    let infoMenu = document.getElementById("infoMenu");
+
+    setVisible(screenCover);
+    setVisible(infoMenu);
+}
+
+function closeInfoMenu() {
+    let screenCover = document.getElementById("screen-cover");
+    let infoMenu = document.getElementById("infoMenu");
+
+    hide(screenCover);
+    hide(infoMenu);
+}
+
+function goToSettings() {
+    window.location.href="settings.php";
+}

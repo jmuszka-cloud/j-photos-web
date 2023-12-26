@@ -30,7 +30,7 @@
 ?>
 
 <!-- Settings button -->
-<div id="settingsButton">
+<div id="settingsButton" onclick="goToSettings();">
             <div>☰</div>
 </div>
 
@@ -60,7 +60,8 @@
         echo "id=\"$photo->id\" ";
         echo "class=\"thumbnail\" ";
         //echo "onclick=\"printId(event)\"";
-        echo "onclick=\"deletePhoto(event);\" ";
+        //echo "onclick=\"deletePhoto(event);\" ";
+        echo "onclick=\"openInfoMenu();\"";
         echo "style=\"background-image: url('../$photo->directory');
                         background-position: center;
                         background-size: cover;
@@ -90,6 +91,18 @@
 
 <div id="screen-cover"></div>
 
+<!-- Info menu -->
+<div id="infoMenu">
+
+    <!-- close button -->
+    <div class="closeButton" onclick="closeInfoMenu();">
+                x
+            </div>
+
+    [Photo info]
+
+</div>
+
 <!-- Setting menu -->
 <div id="settingsMenu">
 </div>
@@ -100,7 +113,7 @@
         x
     </div>
 
-    Upload a photo
+    <p>Upload a photo</p>
 
     <!-- Upload -->
     <div>

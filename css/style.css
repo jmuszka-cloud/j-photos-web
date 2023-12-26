@@ -72,15 +72,19 @@ body {
     margin: 1vw;
 
     display: inline-block;
+
+    filter: brightness(1.0);
 }
 
 .thumbnail:hover {
-    background-color: #aaaaaa;
+    filter:brightness(0.6);
 }
 
 .thumbnail:active {
-    background-color: #999999;
+    filter:brightness(0.4);
 }
+
+
 
 
 /* Upload */
@@ -161,4 +165,23 @@ body {
 
 #settingsButton:active {
     background-color: #008060;
+}
+
+
+/* Info */
+
+#infoMenu {
+    position: fixed;
+    top: 5vh;
+    left: 20vw;
+
+    width: 60vw;
+    height: 80vh;
+
+    background-color: #27272b;
+    display: none;
+
+    text-align: center;
+
+    padding: 2vw;
 }
