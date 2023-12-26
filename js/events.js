@@ -14,7 +14,7 @@ function deletePhoto(e) {
         .then((response) => response.text())
         .then((data) => {
             console.log("PHP: " + data);
-            //TODO: refresh
+            window.location.reload();
         })
         .catch((error) => {
             console.error("Error:",error);
