@@ -22,3 +22,22 @@ function deletePhoto(e) {
 
     //TODO: disable context menu
 }
+
+function setVisible(div) { div.style.display = "block"; }
+function hide(div) { div.style.display = "none"; }
+
+function openUploadMenu() {
+    let screenCover = document.getElementById("screen-cover");
+    let uploadMenu = document.getElementById("uploadMenu");
+
+    setVisible(screenCover);
+    setVisible(uploadMenu);
+}
+
+function closeUploadMenu() {
+    let screenCover = document.getElementById("screen-cover");
+    let uploadMenu = document.getElementById("uploadMenu");
+
+    hide(screenCover);
+    hide(uploadMenu);
+}

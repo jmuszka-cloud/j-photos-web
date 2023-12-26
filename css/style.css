@@ -1,9 +1,164 @@
-.photo {
-    background-color: #f9f9fe;
-    padding: 10px;
-    margin: 5;
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    background-color: #27272b;
+    color: #dfdfdf;
 }
 
-.photo:hover {
-    background-color: #eeeeee;
+#greetingPanel {
+    text-align: center;
+}
+
+#screen-cover {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    background-color: black;
+    opacity: 0.5;
+    display: none;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 1.5vw;
+    height: 1.5vw;
+
+    font-size: 1vw;
+    font-family: sans-serif;
+    text-align: center;
+    line-height: 1.5vw;
+
+    margin: 0.25vw;
+
+    border-radius: 0.75vw;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.closeButton:hover {
+    background-color: #202022;
+}
+
+.closeButton:active {
+    background-color: #17171b;
+}
+
+
+/* Photo panel */
+
+#photoPanel {
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    font-size: 0;
+}
+
+.thumbnail {
+    width: 16.4vw;
+    height: 16.4vw;
+
+    background-color: #dedede;
+    margin: 1vw;
+
+    display: inline-block;
+}
+
+.thumbnail:hover {
+    background-color: #aaaaaa;
+}
+
+.thumbnail:active {
+    background-color: #999999;
+}
+
+
+/* Upload */
+
+#uploadButton {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    width: 3vw;
+    height: 3vw;
+    border-radius: 1.5vw;
+
+    margin: 0.5vw;
+    
+    background-color: #09b598;
+    text-align: center;
+    font-size: 2vw;
+    color: #dfdfdf;;
+    line-height: 3vw;
+
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+#uploadButton:hover{
+    background-color: #009578
+}
+
+#uploadButton:active {
+    background-color: #008060;
+}
+
+#uploadMenu {
+    position: fixed;
+    top: 6vw;
+    left: 37.5vw;
+    
+    width: 25vw;
+    height: 30vw;
+
+    background-color: #27272b;
+    display: none;
+
+    text-align: center;
+
+    padding: 2vw;
+}
+
+/* Settings */
+
+#settingsButton {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 3vw;
+    height: 3vw;
+    border-radius: 1.5vw;
+
+    margin: 0.5vw;
+    
+    background-color: #09b598;
+    text-align: center;
+    font-size: 2vw;
+    color: #dfdfdf;;
+    line-height: 2.5vw;
+
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+#settingsButton:hover{
+    background-color: #009578
+}
+
+#settingsButton:active {
+    background-color: #008060;
 }

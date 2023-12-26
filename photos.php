@@ -4,6 +4,7 @@
 <head>
     <title>j-photos | Gallery</title>
     <meta charset="UTF-8" lang="en">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="js/ajax_form.js" type="text/javascript"></script>
@@ -28,29 +29,47 @@
     if (!$USERNAME || !$USER_ID || !$NAME) header("Location: login.php"); //Return to login if no info provided
 ?>
 
+<!-- Settings button -->
+<div id="settingsButton">
+            <div>☰</div>
+</div>
 
-<!-- Header -->
-<div>Welcome, <?php echo $NAME?></div><br>
-<div>Upload, view, and add photos to your gallery</div><br><br><br>
+<!-- Upload button -->
+<div id="uploadButton" onclick="openUploadMenu();">
+            <div>+</div>
+</div>
 
-<!-- Main -->
+<!-- Greeting panel -->
+<div id="greetingPanel">
+            <h1 class="heading">j-photos</h1>
+            <h3 class="subheading">Welcome, <?php echo $NAME?></h3>
+</div>
+
+<br>
+<hr/>
+
+<!-- Photo panel -->
+<div id="photoPanel">
 <?php
     $photos = getPhotosByUserId($USER_ID);
 
-    //PHOTO CONTAINEr
-    echo "<div ";
-    echo "id=\"photoPanel\" ";
-    echo ">";
-
     //Print photo information
     foreach($photos as $photo) {
+        
         echo "<div ";
         echo "id=\"$photo->id\" ";
-        echo "class=\"photo\" ";
-        echo "onclick=\"printId(event)\"";
-        echo "oncontextmenu=\"deletePhoto(event);\"";
+        echo "class=\"thumbnail\" ";
+        //echo "onclick=\"printId(event)\"";
+        echo "onclick=\"deletePhoto(event);\" ";
+        echo "style=\"background-image: url('../$photo->directory');
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+        \"";
         echo ">";
 
+        //This is for the info menu for each photo
+        /*
         echo "$photo->filename<br>";
         echo " --- Filename: $photo->filename<br>";
         echo " --- Directory: $photo->directory<br>";
@@ -60,19 +79,36 @@
         echo " --- Size: ". convertBytes($photo->size) ."<br>";
         echo " --- Dimensions: ". convertDimensions($photo->width, $photo->height) ."<br>";
         //if ($photo->length >= 0) echo " --- Length: ". convertLength($photo->length) ."<br>"; //TODO: fix formatting
+        */
+
+        //echo "<img src=\"$photo->directory\" width=\"50px\"/>";
 
         echo "</div>";
     }
-
-    echo "</div>"
 ?>
+</div>
 
-<!-- Upload -->
-<div>
-    <form id ="photoUploadForm" method="POST" enctype="multipart/form-data">
-        <input type="file" id="file" name="fileUpload">
-        <input type="button" name="submit" onclick="uploadToServer('file');">
-    </form>
+<div id="screen-cover"></div>
+
+<!-- Setting menu -->
+<div id="settingsMenu">
+</div>
+
+<!-- Upload menu -->
+<div id="uploadMenu">
+    <div class="closeButton" onclick="closeUploadMenu();">
+        x
+    </div>
+
+    Upload a photo
+
+    <!-- Upload -->
+    <div>
+        <form id ="photoUploadForm" method="POST" enctype="multipart/form-data">
+            <input type="file" id="file" name="fileUpload">
+            <input type="button" name="submit" onclick="uploadToServer('file');">
+        </form>
+    </div>
 </div>
 
 
