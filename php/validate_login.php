@@ -8,6 +8,13 @@
     //Retrieve database
     $database = getJsonData("../ref/data.json");
 
+    //Check if it's admin login
+    if ($enteredUsername==="admin" && $enteredPassword==="admin") {
+        //TODO: allow custom admin passwords
+        header("Location: ../admin.php");
+        exit;
+    }
+
     //TODO: encrypted passwords
 
     //Check passwords

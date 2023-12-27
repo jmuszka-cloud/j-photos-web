@@ -29,6 +29,7 @@
     if (!$USERNAME || !$USER_ID || !$NAME) header("Location: login.php"); //Return to login if no info provided
 ?>
 
+
 <!-- Settings button -->
 <div id="settingsButton" onclick="goToSettings();">
             <div>☰</div>
@@ -51,23 +52,32 @@
 <!-- Photo panel -->
 <div id="photoPanel">
 <?php
+
+    //Get list of photos and reverse them
     $photos = getPhotosByUserId($USER_ID);
+    $photos = json_encode($photos);
+    $photos = json_decode($photos, true);
+    array_reverse($photos);
+    $photos = json_encode($photos);
+    $photos = json_decode($photos);
 
     //Print photo information
     foreach($photos as $photo) {
-        
+
+        //thumbnail div
         echo "<div ";
         echo "id=\"$photo->id\" ";
         echo "class=\"thumbnail\" ";
         //echo "onclick=\"printId(event)\"";
         //echo "onclick=\"deletePhoto(event);\" ";
-        echo "onclick=\"openInfoMenu();\"";
+        echo "onclick=\"openInfoMenu($photo->id);\"";
         echo "style=\"background-image: url('../$photo->directory');
                         background-position: center;
                         background-size: cover;
                         background-repeat: no-repeat;
         \"";
         echo ">";
+        echo "</div>";
 
         //This is for the info menu for each photo
         /*
@@ -82,26 +92,51 @@
         //if ($photo->length >= 0) echo " --- Length: ". convertLength($photo->length) ."<br>"; //TODO: fix formatting
         */
 
-        //echo "<img src=\"$photo->directory\" width=\"50px\"/>";
-
+        //Associated info menu
+        echo "<div ";
+        echo "id=\"info-$photo->id\"";
+        echo "class=\"infoMenu\"";
+        echo "style=\"z-index: 2;\"";
+        echo ">";
+        //Close button
+        echo "<div class=\"closeButton\" onclick=\"closeInfoMenu($photo->id);\">x</div>";
+        //Delete button
+        echo "<div class=\"deleteButton\" onclick=\"deletePhoto($photo->id); closeInfoMenu($photo->id);\">🗑</div>";
+        //Image
+        echo "<img src=\"../$photo->directory\" class=\"fullImage\"/>";
+        //Info
+        echo "<div class=\"metadata\">";
+            echo "<p>$photo->filename</p>";
+            echo "<p>" . epochToGregorian($photo->uploadTime) . "</p>";
+            echo "<p>$photo->type</p>";
+            echo "<p>" .  convertBytes($photo->size) . "</p>";
+            echo "<p>" .  convertDimensions($photo->width, $photo->height) . "</p>";
+            //TODO: length
+        echo "</div>";
         echo "</div>";
     }
 ?>
 </div>
 
+<!-- Footer -->
+<div id="footer">
+    <p>v1.0.0 • Dec 2023 • <a href="login.php">Sign out</a><p>
+</div>
+
 <div id="screen-cover"></div>
 
-<!-- Info menu -->
+
+<!-- Info menu
 <div id="infoMenu">
 
-    <!-- close button -->
+
     <div class="closeButton" onclick="closeInfoMenu();">
                 x
             </div>
 
     [Photo info]
-
 </div>
+-->
 
 <!-- Setting menu -->
 <div id="settingsMenu">

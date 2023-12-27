@@ -3,9 +3,9 @@ function printId(e) {
     console.log(div.id);
 }
 
-function deletePhoto(e) {
+function deletePhoto(id) {
     const formData = new FormData();
-    formData.append("id", e.target.id);
+    formData.append("id", id);
 
     fetch("php/delete.php", {
         method: "POST",
@@ -42,17 +42,17 @@ function closeUploadMenu() {
     hide(uploadMenu);
 }
 
-function openInfoMenu() {
+function openInfoMenu(id) {
     let screenCover = document.getElementById("screen-cover");
-    let infoMenu = document.getElementById("infoMenu");
+    let infoMenu = document.getElementById(`info-${id}`);
 
     setVisible(screenCover);
     setVisible(infoMenu);
 }
 
-function closeInfoMenu() {
+function closeInfoMenu(id) {
     let screenCover = document.getElementById("screen-cover");
-    let infoMenu = document.getElementById("infoMenu");
+    let infoMenu = document.getElementById(`info-${id}`);
 
     hide(screenCover);
     hide(infoMenu);

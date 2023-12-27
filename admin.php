@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>j-photos | Settings</title>
+        <title>j-photos | Admin dashboard</title>
         <meta charset="UTF-8" lang="en">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="stylesheet" href="css/settings.css"/>
@@ -21,19 +21,6 @@
         <!-- Greeting panel -->
         <div id="greetingPanel">
             <h1 class="heading">Settings</h1>
-            <h3 class="subheading">Account information</h3>
-            <p>NAME</p>
-            <p>created</p>
-            <p>eadad</p>
-            <br>
-            <hr/>
-
-            <h3 class="subheading">Preferences</h3>
-            <p>Theme</p>
-            <p>Font size</p>
-            <p>awdaw</p>
-            <br>
-            <hr/>
 
             <h3 class="subheading">Admin dashboard</h3>
             <p>Create new user</p>
