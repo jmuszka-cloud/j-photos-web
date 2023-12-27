@@ -57,7 +57,7 @@
     $photos = getPhotosByUserId($USER_ID);
     $photos = json_encode($photos);
     $photos = json_decode($photos, true);
-    array_reverse($photos);
+    $photos = array_reverse($photos);
     $photos = json_encode($photos);
     $photos = json_decode($photos);
 
