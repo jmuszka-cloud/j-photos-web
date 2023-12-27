@@ -120,6 +120,7 @@
 
 <!-- Footer -->
 <div id="footer">
+    <hr style="margin: 0;">
     <p>v1.0.0 • Dec 2023 • <a href="login.php">Sign out</a><p>
 </div>
 

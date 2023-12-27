@@ -83,6 +83,8 @@ a { color: #dfdfdf; }
 
     display: inline-block;
 
+    border-radius: 1vw;
+
     filter: brightness(1.0);
 }
 

@@ -1,0 +1,70 @@
+body {
+    background-color: #272727;
+    color: #dfdfdf;
+    text-align: center;
+}
+
+#bg-image {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.fotocommunity.com%2Fnationalpark-schwarzwald-112043e7-f0ae-4524-b476-2f855368f6a7.jpg%3Fheight%3D1080&f=1&nofb=1&ipt=561bf7010a57eab8c4deb31f18a5f65506fdd840c311a2c5b54c2a1016407ee9&ipo=images");
+    background-color: #27272b;
+}
+
+#bg-tint {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    background-color: #27272b;
+    opacity: 0.8;
+}
+
+#login-panel {
+    position: fixed;
+    width: 36vw;
+    height: 70vh;
+    left: 32vw;
+    top: 8vh;
+
+    background-color: #27272b;
+    opacity: 1.0;
+
+    border-radius: 32px;
+
+    font-family: sans-serif;
+}
+
+#username {
+    border: none;
+
+    font-size: 2vh;
+}
+
+#password {
+    border: none;
+
+    font-size: 2vh;
+}
+
+#submit {
+    border: none;
+    border-radius: 8px;
+
+    width: 7vw;
+    height: 5vh;
+
+    background-color: #09b598;
+    color: #dfdfdf;
+
+    font-size: 2vh;
+    font-weight: bold;
+}
