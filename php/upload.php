@@ -45,8 +45,8 @@
         "uploadTime" => $uploadTime,
         "type" => $type,
         "size" => $size,
-        "width" => "null",
-        "height" => "null",
+        "width" => "".getimagesize("../$directory")[0],
+        "height" => "".getimagesize("../$directory")[1],
         "length" => "null"
     ]];
     $photoInfo = json_encode($photoInfo);
