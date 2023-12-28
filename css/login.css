@@ -12,7 +12,8 @@ body {
     left: 0;
     z-index: -1;
 
-    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.fotocommunity.com%2Fnationalpark-schwarzwald-112043e7-f0ae-4524-b476-2f855368f6a7.jpg%3Fheight%3D1080&f=1&nofb=1&ipt=561bf7010a57eab8c4deb31f18a5f65506fdd840c311a2c5b54c2a1016407ee9&ipo=images");
+    /*background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.fotocommunity.com%2Fnationalpark-schwarzwald-112043e7-f0ae-4524-b476-2f855368f6a7.jpg%3Fheight%3D1080&f=1&nofb=1&ipt=561bf7010a57eab8c4deb31f18a5f65506fdd840c311a2c5b54c2a1016407ee9&ipo=images");*/
+    background-image: url("../res/schwarzwald.jpg");
     background-color: #27272b;
 }
 
