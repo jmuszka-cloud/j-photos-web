@@ -44,13 +44,13 @@
 <div id="greetingPanel">
             <h1 class="heading">j-photos</h1>
             <h3 class="subheading">Welcome, <?php echo $NAME?></h3>
+            <br>
+            <!--<hr style="margin: 0.2vw; color: #dfdfdf">-->
 </div>
-
-<br>
-<hr/>
 
 <!-- Photo panel -->
 <div id="photoPanel">
+
 <?php
 
     //Get list of photos and reverse them
@@ -120,7 +120,7 @@
 
 <!-- Footer -->
 <div id="footer">
-    <hr style="margin: 0;">
+    <!--<hr style="margin: 0.2vw; color: #dfdfdf">-->
     <p>v1.0.0 • Dec 2023 • <a href="login.php">Sign out</a><p>
 </div>
 
