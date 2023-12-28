@@ -21,8 +21,10 @@
         <!-- Greeting panel -->
         <div id="greetingPanel">
             <h1 class="heading">Settings</h1>
+            <br>
+            <hr>
 
-            <h3 class="subheading">Admin dashboard</h3>
+            <h3 class="subheading">Admin dashboard:</h3><br>
             <p>Create new user</p>
             <p>Manage users</p>
             <p>Change defaults</p>
