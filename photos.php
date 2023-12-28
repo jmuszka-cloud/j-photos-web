@@ -149,13 +149,19 @@
         x
     </div>
 
-    <p>Upload a photo</p>
+    <h2>Upload</h2>
+    <p>Add a photo or video to collection</p>
+    <br>
+    <p>Max file size: 10 MB</p>
+    <p>0.5 GB of 10 GB used</p>
+    <br><br>
 
     <!-- Upload -->
     <div>
         <form id ="photoUploadForm" method="POST" enctype="multipart/form-data">
-            <input type="file" id="file" name="fileUpload">
-            <input type="button" name="submit" onclick="uploadToServer('file');">
+            <input type="file" id="file" name="fileUpload" style="background-color: none; position: absolute; transform:translateX(-35%);">
+            <br><br>
+            <input id="upload-submit" type="button" name="submit" value="Upload" onclick="uploadToServer('file');">
         </form>
     </div>
 </div>

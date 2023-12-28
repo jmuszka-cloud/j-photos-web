@@ -8,10 +8,6 @@
     </head>
 
     <body>
-        <!-- Use max-width instead of width -->
-        <!-- Use picture element instead of image element-->
-        <!-- Use vw for text -->
-        <!-- media queries -->
 
         <!-- Settings button -->
         <div id="backButton" onclick="history.back()">
