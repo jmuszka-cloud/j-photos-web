@@ -5,6 +5,8 @@ body {
 
     background-color: #27272b;
     color: #dfdfdf;
+
+    font-family: sans-serif;
 }
 
 #greetingPanel {
@@ -36,7 +38,7 @@ body {
     text-align: center;
     line-height: 1.5vw;
 
-    margin: 0.25vw;
+    margin: 1vw;
 
     border-radius: 0.75vw;
 
@@ -94,6 +96,7 @@ a { color: #dfdfdf; }
     display: inline-block;
 
     border-radius: 1vw;
+    border: 2px solid #8f8f8f;
 
     filter: brightness(1.0);
 }
@@ -151,10 +154,14 @@ a { color: #dfdfdf; }
 
     background-color: #27272b;
     display: none;
+    border-radius: 2vw;
 
     text-align: center;
 
     padding: 2vw;
+
+    animation-name: fade-in;
+    animation-duration: 0s; 
 }
 
 #upload-submit {
@@ -226,16 +233,23 @@ a { color: #dfdfdf; }
 
     background-color: #27272b;
     display: none;
+    border-radius: 2vw;
 
     text-align: center;
     font-size: 1vw;
 
     padding: 2vw;
+
+    animation-name: fade-in;
+    animation-duration: 0s;
 }
 
 .fullImage {
     max-width: 90%;
     height: 70%;
+
+    border-radius: 1vw;
+    border: 2px solid #8f8f8f;
 }
 
 .metadata {
@@ -255,7 +269,7 @@ a { color: #dfdfdf; }
     text-align: center;
     line-height: 3vw;
 
-    margin: 0.25vw;
+    margin: 0.5vw;
 
     border-radius: 1.5vw;
 
@@ -270,4 +284,16 @@ a { color: #dfdfdf; }
 
 .deleteButton:active {
     background-color: #17171b;
+}
+
+
+/* Animation keyframes */
+@keyframes fade-in {
+    from {opacity: 0.0}
+    to {opacity: 1.0}
+}
+
+@keyframes fade-out {
+    from {opacity: 0.0}
+    to {opacity: 1.0}
 }
