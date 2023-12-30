@@ -89,7 +89,8 @@ a { color: #dfdfdf; }
 }
 
 .thumbnail {
-    width: 16.4vw;
+    /*width: 16.4vw;*/
+    width: calc(16.4vw - 4px);
     height: 16.4vw;
 
     /*background-color: #dedede;*/
@@ -248,7 +249,7 @@ a { color: #dfdfdf; }
 
 .fullImage {
     max-width: 90%;
-    height: 70%;
+    height: 60%;
 
     border-radius: 1vw;
     border: 2px solid #8f8f8f;

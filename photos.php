@@ -4,13 +4,14 @@
 <head>
     <title>j-photos | Gallery</title>
     <meta charset="UTF-8" lang="en">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="js/ajax_form.js" type="text/javascript"></script>
     <script src="js/events.js" type="text/javascript"></script>
 
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/desktop-main.css" media="(min-width: 1600px)">
+    <link rel="stylesheet" href="./css/mobile-main.css" media="(max-width: 1600px)">
 </head>
 
 <body>
