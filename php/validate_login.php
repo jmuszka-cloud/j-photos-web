@@ -1,5 +1,6 @@
 <?php
     include 'json.php';
+    include 'password.php';
 
     //Get submitted information
     $enteredUsername = $_POST["username"];
@@ -20,7 +21,8 @@
     //Check passwords
     foreach ($database as $user) {
         //If username and password match
-        if ($enteredUsername===$user->username && $enteredPassword===$user->password) {
+        //if ($enteredUsername===$user->username && $enteredPassword===$user->password) {
+        if ($enteredUsername===$user->username && checkPassword($enteredPassword, $user->password)) {
             //Send to main page
             session_start();
             $_SESSION['userInfo'] = $user; //to save user info
