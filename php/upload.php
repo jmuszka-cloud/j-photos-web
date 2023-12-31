@@ -6,6 +6,7 @@
     
     //Get user info
     session_start();
+    $USERNAME = $_SESSION['userInfo']->username;
     $userId = $_SESSION['userInfo']->password;
     //unset($_SESSION['userInfo']); //TODO: move this?
     if (!$USERNAME || !$USER_ID) header("Location: ../login.php"); //Return to login if no info provided
@@ -53,5 +54,14 @@
 
     //Add new photo to json file
     appendJson($photoInfo, "../ref/userdirs/$userId/photoData.json");
+
+
+    //Add image size to user's total current storage
+    $userdata = getJsonData("../ref/data.json"); //obj
+    $newTotalStorage = "" . (intval($userdata->$USERNAME->currentStorage) + $size);
+    $userdata->$USERNAME->currentStorage = $newTotalStorage;
+
+    writeJson(json_encode($userdata), "../ref/data.json");
+
 
 ?>

@@ -26,8 +26,10 @@
     $USERNAME = $_SESSION['userInfo']->username;
     $USER_ID = $_SESSION['userInfo']->password;
     $NAME = $_SESSION['userInfo']->name;
+    $MAX_STORAGE = $_SESSION['userInfo']->maxStorage;
+    $CURRENT_STORAGE = $_SESSION['userInfo']->currentStorage;
     //unset($_SESSION['userInfo']); //TODO: move this?
-    if (!$USERNAME || !$USER_ID || !$NAME) header("Location: login.php"); //Return to login if no info provided
+    if (!$USERNAME || !$USER_ID || !$NAME || !$MAX_STORAGE || !$CURRENT_STORAGE) header("Location: login.php"); //Return to login if no info provided
 ?>
 
 
@@ -154,7 +156,7 @@
     <p>Add a photo or video to collection</p>
     <br>
     <p>Max file size: 10 MB</p>
-    <p>0.5 GB of 10 GB used</p>
+    <p><?php echo convertBytes($CURRENT_STORAGE) . " out of " . convertBytes($MAX_STORAGE) . " used"; ?></p>
     <br><br>
 
     <!-- Upload -->

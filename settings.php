@@ -17,7 +17,9 @@
         $USERNAME = $_SESSION['userInfo']->username;
         $NAME = $_SESSION['userInfo']->name;
         $ACCOUNT_CREATED = $_SESSION['userInfo']->accountCreated;
-        if (!$USERNAME || !$NAME || !$ACCOUNT_CREATED) header("Location: login.php"); //Return to login if no info provided
+        $MAX_STORAGE = $_SESSION['userInfo']->maxStorage;
+        $CURRENT_STORAGE = $_SESSION['userInfo']->currentStorage;
+        if (!$USERNAME || !$NAME || !$ACCOUNT_CREATED || !$MAX_STORAGE || !$CURRENT_STORAGE) header("Location: login.php"); //Return to login if no info provided
     ?>
 
     <body>
@@ -39,7 +41,7 @@
             <p>Username: <?php echo "<b>$USERNAME</b>"; ?></p>
             <p>Account created: <?php echo "<b>" .  epochToGregorian($ACCOUNT_CREATED) . "</b>"; ?></p>
             <p>Max upload size: <b>10 MB</b></p>
-            <p>Storage: <b>0.5 GB out of 10 GB used</b></p>
+            <p>Storage: <b><?php echo convertBytes($CURRENT_STORAGE) . " out of " . convertBytes($MAX_STORAGE) . " used"; ?></b></p>
             <br>
             <hr/>
 
