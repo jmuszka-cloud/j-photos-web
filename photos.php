@@ -162,7 +162,7 @@
     <!-- Upload -->
     <div>
         <form id ="photoUploadForm" method="POST" enctype="multipart/form-data">
-            <input type="file" id="file" name="fileUpload" style="background-color: none; position: absolute; transform:translateX(-35%);">
+            <input type="file" accept="image/*" id="file" name="fileUpload" style="background-color: none; position: absolute; transform:translateX(-35%);">
             <br><br>
             <input id="upload-submit" type="button" name="submit" value="Upload" onclick="uploadToServer('file');">
         </form>

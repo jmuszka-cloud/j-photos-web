@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="css/mobile-login.css" media="(max-width: 1600px)"/>
 </head>
 
+<?php 
+    unset($_SESSION['userInfo']);
+?>
+
 <html>
 <body style="text-align: center;">
     <div id="bg-image"></div>
