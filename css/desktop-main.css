@@ -249,14 +249,16 @@ a { color: #dfdfdf; }
 
 .fullImage {
     max-width: 90%;
-    height: 60%;
+    max-height: 80%;
 
     border-radius: 1vw;
     border: 2px solid #8f8f8f;
 }
 
 .metadata {
-    max-height: 30%;
+    max-height: 20%;
+    font-size: 0.8vw;
+    line-height: 0.8vw;
 }
 
 .deleteButton {
